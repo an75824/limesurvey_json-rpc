@@ -15,6 +15,11 @@ if (!is_string($session_key))
 }
 //List the available surveys
 $surveys = $client->list_surveys($session_key,'admin'); //array 2x Dimensional
+
+if (isset($surveys['status']) && $surveys['status']!='')
+{
+	exit("No surveys found.\n");
+}
 foreach ($surveys as $index=>$survey)
 {
 	echo $survey['surveyls_title']."\n";
