@@ -25,5 +25,24 @@ foreach ($surveys as $index=>$survey)
 	echo $survey['surveyls_title']."\n";
 }
 
+$data = array (
+	'qid' => '',
+	'parent_qid' => '0',
+	'sid' => '197236', # Survey ID
+	'gid' => '1',
+	'type' => 'O',
+	'title' => 'qr2',
+	'question' => 'Somthing here',
+	'help' => 'Some help',
+	'other' => 'N',
+	'mandatory' => 'Y',
+	'question_order' => '2',
+	'language' => 'en',
+	'scale_id' => '0'
+	);
+
+/* add_question method isn in a private repo for now */
+#$question1 = $client->add_question($session_key,$data);
+
 // remove the session key
 $client->release_session_key($session_key);
